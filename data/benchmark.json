@@ -1,0 +1,603 @@
+{
+ "collectedAt": "2026-09-28",
+ "notes": "Tous les chiffres d'abonnés ont été relevés le 2026-09-28 (page publique consultée) sauf mention contraire. Les compteurs évoluent : les re-vérifier la veille de la présentation. 'non vérifié' = aucune source fiable trouvée.",
+ "market": [
+  {
+   "metric": "Population totale du Cameroun",
+   "value": 30.1,
+   "unit": "millions",
+   "period": "octobre 2025 (rapport Digital 2026, publié le 8 nov. 2025)",
+   "source": "DataReportal / We Are Social / Meltwater – Digital 2026: Cameroon",
+   "url": "https://datareportal.com/reports/digital-2026-cameroon"
+  },
+  {
+   "metric": "Utilisateurs d'internet",
+   "value": 12.6,
+   "unit": "millions",
+   "period": "octobre 2025",
+   "source": "DataReportal – Digital 2026: Cameroon",
+   "url": "https://datareportal.com/reports/digital-2026-cameroon"
+  },
+  {
+   "metric": "Taux de pénétration d'internet",
+   "value": 41.9,
+   "unit": "% de la population",
+   "period": "octobre 2025",
+   "source": "DataReportal – Digital 2026: Cameroon",
+   "url": "https://datareportal.com/reports/digital-2026-cameroon"
+  },
+  {
+   "metric": "Croissance des internautes sur un an",
+   "value": 317,
+   "unit": "milliers (+2,6 %)",
+   "period": "oct. 2024 → oct. 2025",
+   "source": "DataReportal – Digital 2026: Cameroon",
+   "url": "https://datareportal.com/reports/digital-2026-cameroon"
+  },
+  {
+   "metric": "Identités d'utilisateurs de réseaux sociaux",
+   "value": 5.9,
+   "unit": "millions (19,6 % de la population)",
+   "period": "octobre 2025",
+   "source": "DataReportal – Digital 2026: Cameroon (NB : 'identités' ≠ personnes uniques ; DataReportal déconseille les comparaisons d'une année sur l'autre)",
+   "url": "https://datareportal.com/reports/digital-2026-cameroon"
+  },
+  {
+   "metric": "Connexions mobiles cellulaires",
+   "value": 29,
+   "unit": "millions (96,4 % de la population)",
+   "period": "octobre 2025",
+   "source": "DataReportal – Digital 2026: Cameroon",
+   "url": "https://datareportal.com/reports/digital-2026-cameroon"
+  },
+  {
+   "metric": "Audience publicitaire Facebook",
+   "value": 5.9,
+   "unit": "millions (19,6 % de la population)",
+   "period": "octobre 2025",
+   "source": "DataReportal – Digital 2026: Cameroon",
+   "url": "https://datareportal.com/reports/digital-2026-cameroon"
+  },
+  {
+   "metric": "Audience publicitaire LinkedIn (membres)",
+   "value": 1.6,
+   "unit": "millions (5,3 %)",
+   "period": "octobre 2025",
+   "source": "DataReportal – Digital 2026: Cameroon",
+   "url": "https://datareportal.com/reports/digital-2026-cameroon"
+  },
+  {
+   "metric": "Audience publicitaire Messenger",
+   "value": 631,
+   "unit": "milliers (2,1 %)",
+   "period": "octobre 2025",
+   "source": "DataReportal – Digital 2026: Cameroon",
+   "url": "https://datareportal.com/reports/digital-2026-cameroon"
+  },
+  {
+   "metric": "Audience publicitaire Instagram",
+   "value": 611,
+   "unit": "milliers (2,0 %)",
+   "period": "octobre 2025",
+   "source": "DataReportal – Digital 2026: Cameroon",
+   "url": "https://datareportal.com/reports/digital-2026-cameroon"
+  },
+  {
+   "metric": "Audience publicitaire X (Twitter)",
+   "value": 185,
+   "unit": "milliers (0,6 %)",
+   "period": "octobre 2025",
+   "source": "DataReportal – Digital 2026: Cameroon",
+   "url": "https://datareportal.com/reports/digital-2026-cameroon"
+  },
+  {
+   "metric": "Utilisateurs Facebook (audience Meta Ads)",
+   "value": 7.185,
+   "unit": "millions (23,1 % de la population ; 58,5 % d'hommes ; 25-34 ans = 1er groupe, 2,6 M)",
+   "period": "août 2026",
+   "source": "NapoleonCat (données issues des outils publicitaires Meta) – chiffre relevé via résultats de recherche, site non consultable directement",
+   "url": "https://stats.napoleoncat.com/social-media-users-in-cameroon/"
+  },
+  {
+   "metric": "Utilisateurs Instagram",
+   "value": 637.1,
+   "unit": "milliers (2 % ; 60,6 % d'hommes ; 25-34 ans = 251 100)",
+   "period": "août 2026",
+   "source": "NapoleonCat (via résultats de recherche)",
+   "url": "https://stats.napoleoncat.com/social-media-users-in-cameroon/"
+  },
+  {
+   "metric": "Utilisateurs LinkedIn",
+   "value": 1.805,
+   "unit": "millions (5,8 % ; 25-34 ans = 920 000)",
+   "period": "août 2026",
+   "source": "NapoleonCat (via résultats de recherche)",
+   "url": "https://stats.napoleoncat.com/linkedin-users-in-cameroon/"
+  },
+  {
+   "metric": "Audience YouTube, TikTok, WhatsApp au Cameroun",
+   "value": null,
+   "unit": "non vérifié",
+   "period": "—",
+   "source": "Absents des rapports DataReportal Cameroun 2024, 2025 et 2026 ; aucune source fiable trouvée",
+   "url": "https://datareportal.com/reports/digital-2026-cameroon"
+  }
+ ],
+ "references": [
+  {
+   "name": "Orange Cameroun",
+   "sector": "Télécoms / mobile money (Orange Money, super-app Max it)",
+   "relevance": "GROUPE",
+   "accounts": [
+    {
+     "platform": "LinkedIn",
+     "url": "https://www.linkedin.com/company/orange-cameroun",
+     "followers": 123767,
+     "asOf": "2026-09-28",
+     "source": "Page LinkedIn publique consultée"
+    },
+    {
+     "platform": "Instagram",
+     "url": "https://www.instagram.com/orangecameroun/",
+     "followers": "112K (arrondi affiché)",
+     "asOf": "2026-09-28",
+     "source": "Profil Instagram public consulté"
+    },
+    {
+     "platform": "Facebook",
+     "url": "https://www.facebook.com/orangecameroun/",
+     "followers": "non vérifié – la page s'affiche 'Orange | Douala' ; le compteur ~31,7 M vu dans les résultats de recherche correspond vraisemblablement à la page mondiale Orange (structure Global Pages), pas au seul Cameroun",
+     "asOf": "2026-09-28",
+     "source": "Résultat de recherche ; page non consultable sans connexion"
+    },
+    {
+     "platform": "YouTube",
+     "url": "https://www.youtube.com/@OrangeCamerounOfficiel",
+     "followers": "non vérifié",
+     "asOf": "2026-09-28",
+     "source": "Chaîne existante, compteur non lisible"
+    },
+    {
+     "platform": "TikTok",
+     "url": "https://www.tiktok.com/@orangecameroun",
+     "followers": "non vérifié",
+     "asOf": "2026-09-28",
+     "source": "Page non lisible sans navigateur"
+    },
+    {
+     "platform": "X",
+     "url": "https://x.com/orange_cameroun",
+     "followers": "non vérifié",
+     "asOf": "2026-09-28",
+     "source": "X bloque la consultation anonyme"
+    }
+   ],
+   "practices": [
+    {
+     "title": "Une signature de marque simple et répétée",
+     "detail": "Nouvelle signature 'Orange est là' lancée le 6 mars 2025 pour les 25 ans (plus de 14 millions d'abonnés revendiqués, plus de 3 000 sites réseau). Un slogan court, décliné en hashtag (#OrangeEstLà) sur tous les réseaux."
+    },
+    {
+     "title": "Campagnes-jeux adossées à l'usage quotidien",
+     "detail": "'Ta Wish List' (13 nov. 2025 → 22 fév. 2026) : on participe simplement en souscrivant un forfait via #111*1# ou l'app Max it, ou en payant par Orange Money. Puis en janv. 2026 : 2 026 gagnants d'appels/data gratuits toute l'année. Le jeu pousse le canal digital (Max it)."
+    },
+    {
+     "title": "UGC + vote du public : Orange Music Talents",
+     "detail": "Saison 2 (2026) : les candidats publient une vidéo de 2 min sur Facebook, Instagram ou TikTok avec #OrangeMusicTalents237 #Saison2 avant le 21 juillet 2026 ; les 100 vidéos les plus engageantes passent à l'étape suivante ; vote via Max it ; jury de célébrités (Salatiel, Coco Argentée, Dina Bell). Le public fabrique le contenu et la portée."
+    },
+    {
+     "title": "Majorité de vidéos courtes (Reels) sur Instagram",
+     "detail": "Constat au 28/09/2026 : les publications récentes sont très majoritairement des Reels (musique, football, concerts, Max it), en français, ton énergique."
+    },
+    {
+     "title": "Service client dans les messageries",
+     "detail": "Chatbot 'Combi' sur Facebook Messenger et WhatsApp lancé en décembre 2021 (consultation d'offres, soldes, puis achats) ; assistance WhatsApp aussi utilisée pour la collecte de pièces d'identité."
+    },
+    {
+     "title": "RSE / formation des jeunes (pertinent pour le CFP)",
+     "detail": "Orange Digital Center (Douala, lancé juin 2020 : École du Code, FabLab solidaire, Orange Fab) : bilan officiel au 28 fév. 2023 = 2 544 apprenants formés (38 % de femmes), 340 insertions pro, 20 startups accompagnées ; clubs ODC dans des universités (Yaoundé II-Soa, Buea, Ngaoundéré, Dschang) ; 'Speed recruiting' (7e édition le 5 mars 2025) ; prix POESAM (15e édition, verdict le 3 juillet 2025 à Douala)."
+    }
+   ],
+   "sources": [
+    "https://cameroonceo.com/2025/03/07/orange-cameroun-celebre-ses-25-ans-avec-une-nouvelle-signature-de-marque-a-lhotel-hilton-de-yaounde/",
+    "https://ecomatin.net/fin-dannee-orange-cameroun-lance-une-wish-list-geante-pour-recompenser-ses-millions-dabonnes",
+    "https://projecteurmagazine.cm/2026/01/26/orange-cameroun-lance-lannee-2026-avec-une-nouvelle-campagne-de-recompenses-pour-ses-clients/",
+    "https://fr.allafrica.com/stories/202606240195.html",
+    "https://www.camer.be/93744/11:1/orange-music-talents-saison-2-orange-cameroun-relance-la-quete-des-futures-stars-de-la-musique-cameroon.html",
+    "https://www.digitalbusiness.africa/orange-cameroun-presente-combi-son-chatbot-accessible-via-facebook-messenger-et-whatsapp/",
+    "https://www.investiraucameroun.com/economie/0103-19097-economie-numerique-orange-digital-center-a-forme-plus-2-500-apprenants-et-accompagne-20-start-ups-en-3-ans",
+    "https://afriqueitnews.com/tech-media/560-jeunes-ont-trouve-emploi-orange-digital-center-2020/",
+    "https://www.econuma.com/go-digital/opportunites-formations-gratuites-dorange-digital-center-au-cameroun-1740517779",
+    "https://www.digitalbusiness.africa/cameroun-orange-digital-center-lance-speed-recruiting-pour-les-jeunes-en-quete-demplois-dans-le-numerique-postulez-avant-le-11-fev-2025/",
+    "https://cameroon-eco-business.info/2025/07/04/poesam-2025-orange-cameroun-consacre-quatre-projets-innovants-pour-une-afrique-plus-solidaire-et-numerique/",
+    "https://www.linkedin.com/company/orange-cameroun",
+    "https://www.instagram.com/orangecameroun/"
+   ]
+  },
+  {
+   "name": "MTN Cameroon",
+   "sector": "Télécoms / mobile money (MoMo)",
+   "relevance": "GROUPE",
+   "accounts": [
+    {
+     "platform": "LinkedIn",
+     "url": "https://cm.linkedin.com/company/mtncameroon",
+     "followers": 164569,
+     "asOf": "2026-09-28",
+     "source": "Page LinkedIn publique consultée"
+    },
+    {
+     "platform": "Instagram",
+     "url": "https://www.instagram.com/mtncameroon/",
+     "followers": "97.6K (arrondi affiché)",
+     "asOf": "2026-09-28",
+     "source": "Profil Instagram public consulté"
+    },
+    {
+     "platform": "Facebook",
+     "url": "https://www.facebook.com/MTNCAMEROON/",
+     "followers": "922K (selon extrait de recherche, date non garantie)",
+     "asOf": "2026-09-28",
+     "source": "Résultat de recherche – à reconfirmer à l'écran"
+    }
+   ],
+   "practices": [
+    {
+     "title": "Campagne d'anniversaire à tirages fréquents",
+     "detail": "'MTN Y'ello 25' (mai 2025, 25 ans) : 2 000 000 FCFA par jour répartis entre utilisateurs MoMo, tirage toutes les 25 minutes – mécanique qui crée des rendez-vous et du contenu 'gagnants' quotidien."
+    },
+    {
+     "title": "Promotions saisonnières lisibles",
+     "detail": "'Unbeatable Bonus' (juin → août 2026) : bonus instantané à chaque achat de forfait éligible + cadeaux et voyages à gagner."
+    },
+    {
+     "title": "LinkedIn employeur fort",
+     "detail": "Plus grande communauté LinkedIn du secteur télécom au Cameroun parmi les pages relevées (164 569 abonnés au 28/09/2026, devant Orange Cameroun 123 767)."
+    }
+   ],
+   "sources": [
+    "https://cameroonceo.com/2025/05/15/mtn-cameroon-celebre-25-ans-dinnovation-et-de-proximite-avec-une-campagne-nationale-denvergure-mtn-yello-25/",
+    "https://lauradavemedia.com/mtn-cameroon-lance-unbeatable-bonus-une-campagne-qui-recompense-chaque-achat-de-forfait/",
+    "https://cm.linkedin.com/company/mtncameroon",
+    "https://www.instagram.com/mtncameroon/"
+   ]
+  },
+  {
+   "name": "Advans Cameroun",
+   "sector": "Microfinance (EMF 2e catégorie, créé en 2006)",
+   "relevance": "GATHE",
+   "accounts": [
+    {
+     "platform": "LinkedIn",
+     "url": "https://www.linkedin.com/company/advans-cameroun",
+     "followers": 58622,
+     "asOf": "2026-09-28",
+     "source": "Page LinkedIn publique consultée"
+    },
+    {
+     "platform": "Facebook",
+     "url": "https://www.facebook.com/advcameroun/",
+     "followers": "13 438 mentions J'aime (extrait de recherche, date non garantie)",
+     "asOf": "2026-09-28",
+     "source": "Résultat de recherche – à reconfirmer"
+    }
+   ],
+   "practices": [
+    {
+     "title": "Podcast/vidéo d'éducation financière",
+     "detail": "Série de podcast vidéo 'Advans Boost' (sept. 2026) : un expert explique comment évaluer son besoin de financement – format pédagogique réutilisable par Gathe Finance (épargne, tontine, crédit)."
+    },
+    {
+     "title": "Programme femmes entrepreneures + témoignages",
+     "detail": "Sessions 'Lady Boost' à Douala et Yaoundé (≈100 participantes par session) relayées en carrousels photos puis en vidéo-témoignage d'une participante."
+    },
+    {
+     "title": "Conseils concrets en texte court",
+     "detail": "Posts du type 'un dossier de financement doit être cohérent avec le besoin, le cycle d'activité et la capacité de remboursement' ; visites terrain (ex. communauté de Kompina, financement palmier à huile)."
+    }
+   ],
+   "sources": [
+    "https://www.linkedin.com/company/advans-cameroun",
+    "https://www.advanscameroun.com/a-propos/"
+   ]
+  },
+  {
+   "name": "Afriland First Bank",
+   "sector": "Banque (créée en 1987)",
+   "relevance": "GATHE",
+   "accounts": [
+    {
+     "platform": "LinkedIn",
+     "url": "https://www.linkedin.com/company/afriland-first-bank",
+     "followers": 153679,
+     "asOf": "2026-09-28",
+     "source": "Page LinkedIn publique consultée"
+    }
+   ],
+   "practices": [
+    {
+     "title": "Quiz interactifs sur l'épargne",
+     "detail": "Relevé du 28/09/2026 : un quiz épargne a obtenu 75 réactions et 18 commentaires, contre 18 à 26 réactions pour les posts promotionnels de la même période – l'interactif génère le plus de commentaires."
+    },
+    {
+     "title": "Tutoriels vidéo des outils digitaux",
+     "detail": "Vidéo 'how-to' de la plateforme digitale de la banque (57 réactions) : montrer comment utiliser un service rassure et réduit les questions au service client."
+    },
+    {
+     "title": "Éducation financière en astuces courtes",
+     "detail": "Conseils sur l'habitude d'épargne quotidienne, épargne vs obligations, fixation d'objectifs d'épargne."
+    }
+   ],
+   "sources": [
+    "https://www.linkedin.com/company/afriland-first-bank"
+   ]
+  },
+  {
+   "name": "Forvis Mazars au Cameroun",
+   "sector": "Audit, fiscalité, juridique, conseil (Douala)",
+   "relevance": "CGA",
+   "accounts": [
+    {
+     "platform": "LinkedIn",
+     "url": "https://cm.linkedin.com/company/forvismazars-au-cameroun",
+     "followers": 25805,
+     "asOf": "2026-09-28",
+     "source": "Page LinkedIn publique consultée (l'ancienne URL 'mazars-in-cameroon' redirige ici)"
+    }
+   ],
+   "practices": [
+    {
+     "title": "Contenu d'expertise vulgarisé",
+     "detail": "Posts sur des indicateurs financiers (ex. 'Book Gearing'), l'audit interne, la modélisation financière, l'IA en Afrique."
+    },
+    {
+     "title": "Marque employeur",
+     "detail": "Annonces de nominations d'associés, offres de stage à Douala : montre les visages de l'équipe."
+    },
+    {
+     "title": "Rendez-vous récurrents",
+     "detail": "Série de citations '#MondayQuote' (déjà utilisée en 2024) : un format régulier facile à produire."
+    }
+   ],
+   "sources": [
+    "https://cm.linkedin.com/company/forvismazars-au-cameroun",
+    "https://www.linkedin.com/posts/forvismazars-au-cameroun_motivation-forvismazars-mondayquote-activity-7231218915387805696-82VQ"
+   ]
+  },
+  {
+   "name": "PwC Afrique Francophone Subsaharienne (siège Douala)",
+   "sector": "Audit, fiscalité, conseil",
+   "relevance": "CGA",
+   "accounts": [
+    {
+     "platform": "LinkedIn",
+     "url": "https://cm.linkedin.com/company/pwc-afss",
+     "followers": 66847,
+     "asOf": "2026-09-28",
+     "source": "Page LinkedIn publique consultée"
+    }
+   ],
+   "practices": [
+    {
+     "title": "Page régionale unique",
+     "detail": "Une seule page LinkedIn pour 9 pays, siège Douala : concentre l'audience au lieu de la disperser."
+    },
+    {
+     "title": "Contenus fiscaux de référence",
+     "detail": "PwC publie les 'Worldwide Tax Summaries' Cameroun (IS, retenues à la source, IRPP) – contenu de référence qui attire du trafic."
+    }
+   ],
+   "sources": [
+    "https://cm.linkedin.com/company/pwc-afss",
+    "https://taxsummaries.pwc.com/republic-of-cameroon"
+   ]
+  },
+  {
+   "name": "Décryptage de la loi de finances 2026 (VINKA, BSTP)",
+   "sector": "Conseil fiscal / accompagnement PME",
+   "relevance": "CGA",
+   "accounts": [],
+   "practices": [
+    {
+     "title": "Événement 'décryptage loi de finances'",
+     "detail": "Le cabinet VINKA (Douala, dirigé par Nadine Tinen, ex-PDG de PwC AFSS) a organisé des petits-déjeuners-débats sur la loi de finances 2026 en janvier et février 2026 avec un représentant de l'administration fiscale ; la BSTP a tenu un séminaire 'loi de finances 2026 expliquée aux PME/PMI' le 20 janvier à Douala. Modèle direct pour le CGA : un décryptage annuel en présentiel + contenus LinkedIn/Facebook dérivés."
+    }
+   ],
+   "sources": [
+    "https://www.agenceecofin.com/actualites-finance/0805-138253-cameroun-la-loi-de-finances-2026-decryptee-par-les-entreprises-et-les-experts-fiscaux",
+    "https://www.bstp-cameroun.cm/fr/actualit%C3%A9s/127/la-loi-des-finances-2026-expliquee-aux-pme-pmi/",
+    "https://minfi.gov.cm/loi-de-finances-2026-comprendre-les-nouvelles-mesures/"
+   ]
+  },
+  {
+   "name": "Institut Universitaire de la Côte (IUC) – Douala",
+   "sector": "Enseignement supérieur privé",
+   "relevance": "CFP",
+   "accounts": [
+    {
+     "platform": "Facebook",
+     "url": "https://www.facebook.com/IucDouala/",
+     "followers": "182 281 mentions J'aime (extrait de recherche, date non garantie)",
+     "asOf": "2026-09-28",
+     "source": "Résultat de recherche – à reconfirmer"
+    },
+    {
+     "platform": "LinkedIn",
+     "url": "https://www.linkedin.com/school/institut-universitaire-de-la-c-te/",
+     "followers": 20738,
+     "asOf": "2026-09-28",
+     "source": "Compteur affiché sur une publication LinkedIn publique consultée (un autre extrait indique 4 570 : à reconfirmer)"
+    }
+   ],
+   "practices": [
+    {
+     "title": "Calendrier de recrutement très visible",
+     "detail": "Concours d'entrée 2026 annoncés par vidéo sur Facebook (9 mai 2026, 27 juin 2026), avec promesse claire ('02 ans à l'IUC + 03 ans à l'étranger')."
+    },
+    {
+     "title": "Célébrer les étudiants",
+     "detail": "Soutenances, remises de diplômes et vie de campus (Logbessou) mis en avant sur LinkedIn."
+    }
+   ],
+   "sources": [
+    "https://www.facebook.com/IucDouala/videos/%EF%B8%8Fconcours-%EF%B8%8F-le-succ%C3%A8s-ne-simprovise-pas-il-se-pr%C3%A9pare-tu-veux-rejoindre-l%C3%A9lite-l/956675326952791/",
+    "https://www.linkedin.com/posts/institut-universitaire-de-la-c-te_iuc-logbessou-douala-activity-7346932166649344000-m6YX"
+   ]
+  },
+  {
+   "name": "Keyce Informatique & IA Cameroun",
+   "sector": "École supérieure privée (Douala, Yaoundé, Garoua)",
+   "relevance": "CFP",
+   "accounts": [
+    {
+     "platform": "Facebook",
+     "url": "https://www.facebook.com/keyceinformatiquecameroun/",
+     "followers": "5 751 (extrait de recherche)",
+     "asOf": "2026-09-28",
+     "source": "Résultat de recherche"
+    },
+    {
+     "platform": "Instagram",
+     "url": "https://www.instagram.com/keyceinformatique_cameroun/",
+     "followers": "1 478 (extrait de recherche)",
+     "asOf": "2026-09-28",
+     "source": "Résultat de recherche"
+    },
+    {
+     "platform": "LinkedIn",
+     "url": "https://cm.linkedin.com/company/keyce-informatique-cameroun",
+     "followers": "718 (extrait de recherche)",
+     "asOf": "2026-09-28",
+     "source": "Résultat de recherche"
+    },
+    {
+     "platform": "TikTok",
+     "url": "https://www.tiktok.com/@keyceinformatiquecamer1",
+     "followers": "non vérifié",
+     "asOf": "2026-09-28",
+     "source": "—"
+    }
+   ],
+   "practices": [
+    {
+     "title": "Présence sur les 5 réseaux dont TikTok 'student life'",
+     "detail": "Compte TikTok actif avec vidéos #studentlife – exemple d'école de taille modeste qui utilise TikTok pour toucher les 18-25 ans. Audience encore faible : exemple de format, pas de résultat."
+    }
+   ],
+   "sources": [
+    "https://www.tiktok.com/@keyceinformatiquecamer1/video/7327323746631552262",
+    "https://www.instagram.com/keyceinformatique_cameroun/"
+   ]
+  },
+  {
+   "name": "Institut Siantou (Yaoundé) – contre-exemple",
+   "sector": "Enseignement privé",
+   "relevance": "CFP",
+   "accounts": [
+    {
+     "platform": "Facebook",
+     "url": "https://www.facebook.com/siantousup/",
+     "followers": "8 095 (extrait de recherche)",
+     "asOf": "2026-09-28",
+     "source": "Résultat de recherche"
+    },
+    {
+     "platform": "Facebook",
+     "url": "https://www.facebook.com/siantouniv/",
+     "followers": "10 294 (extrait de recherche)",
+     "asOf": "2026-09-28",
+     "source": "Résultat de recherche"
+    }
+   ],
+   "practices": [
+    {
+     "title": "À éviter : pages multiples",
+     "detail": "Au moins 4 pages Facebook distinctes (Institut universitaire siantou, Siantou Univ, Institut Universitaire Siantou, Institut siantou secondaire) : l'audience est éclatée. Leçon pour BRC : une page par entité maximum, clairement nommée et reliée à la page groupe."
+    }
+   ],
+   "sources": [
+    "https://www.facebook.com/siantousup/",
+    "https://www.facebook.com/siantouniv/"
+   ]
+  }
+ ],
+ "benchmarks": [
+  {
+   "metric": "Taux d'engagement médian TikTok (tous secteurs, interactions/abonnés par post)",
+   "value": "2,01 %",
+   "period": "données 2025, rapport publié le 5 mars 2026",
+   "source": "Quid (ex-Rival IQ) – 2026 Social Media Industry Benchmark Report",
+   "url": "https://www.quid.com/knowledge-hub/resource-library/blog/2026-social-media-industry-benchmark-report"
+  },
+  {
+   "metric": "Taux d'engagement médian Instagram (tous secteurs)",
+   "value": "0,30 %",
+   "period": "rapport 2026 (données 2025)",
+   "source": "Quid (ex-Rival IQ)",
+   "url": "https://www.quid.com/knowledge-hub/resource-library/blog/2026-social-media-industry-benchmark-report"
+  },
+  {
+   "metric": "Taux d'engagement médian X (tous secteurs)",
+   "value": "0,03 %",
+   "period": "rapport 2026 (données 2025)",
+   "source": "Quid (ex-Rival IQ)",
+   "url": "https://www.quid.com/knowledge-hub/resource-library/blog/2026-social-media-industry-benchmark-report"
+  },
+  {
+   "metric": "Fréquence médiane de publication (posts/semaine)",
+   "value": "Instagram 3,69 ; Facebook 3,0 ; X 2,24 ; TikTok 1,98",
+   "period": "rapport 2026 (données 2025)",
+   "source": "Quid (ex-Rival IQ)",
+   "url": "https://www.quid.com/knowledge-hub/resource-library/blog/2026-social-media-industry-benchmark-report"
+  },
+  {
+   "metric": "Taux d'engagement moyen par abonnés",
+   "value": "TikTok 3,70 % ; Instagram 0,48 % ; Facebook 0,15 % ; X 0,12 %",
+   "period": "2025 (70 M de posts, janv. 2024–déc. 2025), publié le 16 janv. 2026",
+   "source": "Socialinsider – Social Media Benchmarks 2026",
+   "url": "https://www.socialinsider.io/social-media-benchmarks"
+  },
+  {
+   "metric": "Fréquence moyenne de publication (posts/mois)",
+   "value": "Facebook 24 ; Instagram 20 ; TikTok 15",
+   "period": "2025",
+   "source": "Socialinsider – Social Media Benchmarks 2026",
+   "url": "https://www.socialinsider.io/social-media-benchmarks"
+  },
+  {
+   "metric": "Engagement Instagram par format",
+   "value": "Carrousels 0,55 % ; Reels 0,52 % ; images 0,37 %",
+   "period": "2025 (35 M de posts), publié le 20 fév. 2026",
+   "source": "Socialinsider – Instagram Benchmarks 2026",
+   "url": "https://www.socialinsider.io/social-media-benchmarks/instagram"
+  },
+  {
+   "metric": "Part recommandée de vidéo courte sur Instagram",
+   "value": "environ 60–70 % de Reels (avis d'expert cité, pas une mesure)",
+   "period": "2026",
+   "source": "Socialinsider – Instagram Benchmarks 2026 (citation de Sam Oliver)",
+   "url": "https://www.socialinsider.io/social-media-benchmarks/instagram"
+  },
+  {
+   "metric": "Taux d'engagement moyen LinkedIn (pages entreprises)",
+   "value": "5,20 % ; documents natifs (carrousels PDF) 7,00 % ; multi-images 6,45 % ; vidéo 6,00 % ; image 5,30 % ; texte 4,50 % ; sondages 4,20 % ; liens 3,25 %",
+   "period": "2025 (1,3 M de posts, 16 645 pages), publié le 16 mars 2026",
+   "source": "Socialinsider – LinkedIn Benchmarks 2026 (méthode de calcul différente de Facebook/Instagram : ne pas comparer)",
+   "url": "https://www.socialinsider.io/social-media-benchmarks/linkedin"
+  },
+  {
+   "metric": "Délai de réponse attendu sur les réseaux sociaux",
+   "value": "≈ 3 consommateurs sur 4 attendent une réponse en 24 h ou moins",
+   "period": "Sprout Social Index 2025 (enquête sept. 2024, US/UK/Canada/Australie)",
+   "source": "Sprout Social",
+   "url": "https://sproutsocial.com/insights/social-media-customer-service-statistics/"
+  },
+  {
+   "metric": "Risque en cas d'absence de réponse",
+   "value": "≈ 73 % des consommateurs iraient chez un concurrent si la marque ne répond pas sur les réseaux",
+   "period": "Sprout Social Index 2025 (publié le 7 janv. 2025 ; 4 044 consommateurs, US/UK/CA/AU)",
+   "source": "Sprout Social – communiqué investisseurs",
+   "url": "https://investors.sproutsocial.com/news/news-details/2025/The-Days-of-Trend-Chasing-Are-Over-New-Research-from-Sprout-Social-Reveals-a-Third-of-Consumers-Think-Jumping-on-Viral-Trends-is-Embarrassing-for-Brands/"
+  }
+ ]
+}

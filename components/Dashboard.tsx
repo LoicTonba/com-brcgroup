@@ -24,6 +24,13 @@ import {
   SplitBar,
   StackedColumns,
 } from "./charts";
+import { Gallery, Videos, type MediaItem, type VideoItem } from "./Showcase";
+import {
+  BenchmarkSection,
+  StrategySection,
+  type Benchmark,
+  type StrategyData,
+} from "./Strategy";
 
 const FORMAT_LABEL: Record<string, string> = {
   flyer: "Flyer / visuel",
@@ -73,8 +80,28 @@ const LEVEL: Record<
   },
 };
 
-export default function Dashboard({ data }: { data: AuditData }) {
+export default function Dashboard({
+  data,
+  media,
+  videos,
+  benchmark,
+  strategy,
+}: {
+  data: AuditData;
+  media: MediaItem[];
+  videos: VideoItem[];
+  benchmark: Benchmark;
+  strategy: StrategyData;
+}) {
   const [entity, setEntity] = useState<EntityFilter>("ALL");
+  const inView = <T extends { entity: Entity }>(items: T[]) =>
+    entity === "ALL" ? items : items.filter((i) => i.entity === entity);
+  const ownLinkedIn = data.sources
+    .filter((s) => s.platform === "linkedin" && s.followers !== null)
+    .map((s) => ({
+      name: `${ENTITIES.find((e) => e.id === s.entity)?.label} (BRC)`,
+      followers: s.followers!,
+    }));
   const view = useMemo(() => filterData(data, entity), [data, entity]);
   const k = useMemo(() => computeKpis(view), [view]);
   const insights = useMemo(() => buildInsights(view), [view]);
@@ -267,27 +294,27 @@ export default function Dashboard({ data }: { data: AuditData }) {
             hint={`${formatNumber(k.reactions)} réactions · ${formatNumber(k.comments)} commentaires · ${formatNumber(k.shares)} partages`}
           />
           <Stat
-            label="Taux d'engagement"
+            label="Taux d'engagement médian"
             value={
               k.engagementRate === null
                 ? "—"
                 : `${formatNumber(k.engagementRate, 2)} %`
             }
-            hint="interactions / abonnés, par publication"
+            hint="interactions / abonnés par publication · repère Facebook : 0,15 %"
           />
           <Stat
             label="Vues vidéo"
             value={formatNumber(k.views)}
-            hint="YouTube et vidéos réseaux"
+            hint="YouTube et vidéos Facebook"
           />
           <Stat
-            label="Rythme de publication"
-            value={
+            label="Publications (12 derniers mois)"
+            value={k.last12 === null ? "—" : `≥ ${formatNumber(k.last12)}`}
+            hint={
               k.postsPerMonth === null
-                ? "—"
-                : `${formatNumber(k.postsPerMonth, 1)} / mois`
+                ? undefined
+                : `≈ ${formatNumber(k.postsPerMonth, 1)} par mois · dernière : ${formatDate(k.last)}`
             }
-            hint={`dernière : ${formatDate(k.last)}`}
           />
           <Stat
             label="Satisfaction client"
@@ -300,7 +327,7 @@ export default function Dashboard({ data }: { data: AuditData }) {
             }
             hint={
               k.recommendation !== null
-                ? `recommandent la page · ${k.reviewCount} avis seulement`
+                ? `recommandent la page (${k.ratedCount} avis Facebook notés)`
                 : k.satisfaction !== null
                   ? `commentaires positifs (${k.sentimentTotal} analysés)`
                   : "pas assez d'avis publics"
@@ -323,7 +350,7 @@ export default function Dashboard({ data }: { data: AuditData }) {
               "Abonnés",
               "Interactions",
               "Moy. / publication",
-              "Engagement",
+              "Engagement médian",
               "Dernière publication",
             ]}
             rows={ENTITIES.map((e) => {
@@ -354,6 +381,22 @@ export default function Dashboard({ data }: { data: AuditData }) {
         </Card>
       )}
 
+      <Card
+        className="mt-4"
+        title="Les visuels publiés"
+        subtitle="Une sélection de flyers réellement publiés sur Facebook et Instagram · cliquez pour agrandir"
+      >
+        <Gallery items={inView(media)} />
+      </Card>
+
+      <Card
+        className="mt-4"
+        title="Les vidéos les plus vues"
+        subtitle="Chaîne YouTube du groupe · la vidéo se charge uniquement au clic"
+      >
+        <Videos items={inView(videos)} />
+      </Card>
+
       <section className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
         <Card
           title="Publications par année"
@@ -364,7 +407,7 @@ export default function Dashboard({ data }: { data: AuditData }) {
         </Card>
         <Card
           title="Publications par plateforme"
-          subtitle="Où le groupe communique"
+          subtitle="Publications analysées en détail"
         >
           <BarList
             items={platforms.map((p) => ({
@@ -379,7 +422,7 @@ export default function Dashboard({ data }: { data: AuditData }) {
       <Card
         className="mt-4"
         title="Performance par plateforme"
-        subtitle="Audience, interactions et engagement moyen"
+        subtitle="Audience, interactions et engagement médian"
       >
         <Table
           head={[
@@ -391,7 +434,7 @@ export default function Dashboard({ data }: { data: AuditData }) {
             "Partages",
             "Vues",
             "Moy. / publication",
-            "Engagement",
+            "Engagement médian",
           ]}
           rows={platforms.map((p) => ({
             key: p.platform,
@@ -422,20 +465,30 @@ export default function Dashboard({ data }: { data: AuditData }) {
           <BarList items={formats} />
         </Card>
         <Card title="Retours de l'audience" subtitle="Tonalité des commentaires">
-          <SplitBar
-            parts={[
-              { label: "Positifs", value: k.sentiment.positive, color: "var(--good)" },
-              { label: "Neutres / questions", value: k.sentiment.neutral, color: "var(--axis)" },
-              { label: "Négatifs", value: k.sentiment.negative, color: "var(--critical)" },
-            ]}
-          />
+          {k.sentimentTotal >= 10 ? (
+            <SplitBar
+              parts={[
+                { label: "Positifs", value: k.sentiment.positive, color: "var(--good)" },
+                { label: "Neutres / questions", value: k.sentiment.neutral, color: "var(--axis)" },
+                { label: "Négatifs", value: k.sentiment.negative, color: "var(--critical)" },
+              ]}
+            />
+          ) : (
+            <p className="rounded-lg bg-page p-3 text-sm text-ink-2">
+              Trop peu de commentaires publics pour mesurer une tonalité (
+              {k.sentimentTotal} analysé{k.sentimentTotal > 1 ? "s" : ""}).
+              L&apos;audience réagit mais écrit peu : c&apos;est un axe de travail.
+            </p>
+          )}
           <dl className="mt-6 grid grid-cols-2 gap-4 text-sm">
             <div>
               <dt className="text-ink-2">Recommandation</dt>
               <dd className="mt-0.5 text-xl font-semibold">
                 {k.recommendation !== null ? `${Math.round(k.recommendation)} %` : "—"}
               </dd>
-              <dd className="text-xs text-muted">{k.reviewCount} avis Facebook</dd>
+              <dd className="text-xs text-muted">
+                {k.ratedCount} avis Facebook notés
+              </dd>
             </div>
             <div>
               <dt className="text-ink-2">Commentaires / publication</dt>
@@ -527,10 +580,55 @@ export default function Dashboard({ data }: { data: AuditData }) {
       </Card>
 
       <Card
-        className="mt-4"
-        title="Périmètre de l'audit"
-        subtitle="Comptes analysés et état de la collecte"
+        id="references"
+        className="mt-4 scroll-mt-20"
+        title="Les références au Cameroun"
+        subtitle="Ce que font les meilleurs, chiffres sourcés et vérifiables"
       >
+        <BenchmarkSection
+          data={benchmark}
+          lessons={strategy.orangeLessons}
+          ownLinkedIn={ownLinkedIn}
+        />
+      </Card>
+
+      <Card
+        id="strategie"
+        className="mt-4 scroll-mt-20"
+        title="Stratégie proposée sur 9 mois"
+        subtitle={strategy.title}
+      >
+        <StrategySection data={strategy} />
+      </Card>
+
+      <Card
+        className="mt-4"
+        title="Méthode et périmètre de l'audit"
+        subtitle="Comment les chiffres ont été obtenus"
+      >
+        <ul className="mb-5 grid grid-cols-1 gap-x-6 gap-y-2 text-sm text-ink-2 md:grid-cols-2">
+          <li>
+            <strong className="text-ink">Publications recensées</strong> :
+            publications collectées une par une, plus celles qu&apos;une
+            plateforme affiche au compteur sans les montrer (Instagram).
+          </li>
+          <li>
+            <strong className="text-ink">Taux d&apos;engagement médian</strong> :
+            (réactions + commentaires + partages) ÷ abonnés de la page, pour
+            chaque publication. On retient la valeur du milieu, qu&apos;une seule
+            publication virale ne peut pas gonfler.
+          </li>
+          <li>
+            <strong className="text-ink">12 derniers mois</strong> : de
+            octobre 2025 à septembre 2026. C&apos;est un minimum, car sans
+            connexion Instagram n&apos;affiche que les 12 dernières publications.
+          </li>
+          <li>
+            <strong className="text-ink">Sources</strong> : pages publiques des
+            comptes du groupe, captures d&apos;écran de la page Facebook du CGA
+            et métadonnées YouTube, relevées le {formatDate(data.generatedAt)}.
+          </li>
+        </ul>
         <Table
           head={["Compte", "Entité", "Plateforme", "Abonnés", "Publications collectées", "Collecte", "Remarques"]}
           rows={view.sources.map((s) => ({
