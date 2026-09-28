@@ -31,7 +31,10 @@ export const THEME_LABEL: Record<string, string> = {
   promotion: "Promotion",
   voeux: "Vœux",
   temoignage: "Témoignage",
-  financement: "Financement",
+  financement: "Financement / épargne",
+  vie: "Vie de l'entreprise",
+  motivation: "Motivation",
+  humour: "Humour",
   autre: "Autre",
 };
 
@@ -65,7 +68,11 @@ export function yearOf(date: string | null) {
   return date ? date.slice(0, 4) : null;
 }
 
-export function computeKpis(data: { sources: Source[]; posts: Post[] }) {
+export function computeKpis(data: {
+  sources: Source[];
+  posts: Post[];
+  generatedAt?: string;
+}) {
   const { sources, posts } = data;
   const measured = posts.filter(isMeasured);
   const reactions = posts.reduce((a, p) => a + n(p.reactions), 0);
@@ -75,12 +82,18 @@ export function computeKpis(data: { sources: Source[]; posts: Post[] }) {
   const total = reactions + comments + shares;
   const followers = sources.reduce((a, s) => a + n(s.followers), 0);
 
-  // Engagement rate per post = interactions / audience of its page, averaged
-  // over measured posts whose page has a known audience.
+  // Engagement rate per post = interactions / audience of its page. The median
+  // is reported: a single viral post must not flatter the whole account.
   const rates = measured
     .map((p) => (p.audience ? interactions(p) / p.audience : null))
-    .filter((r): r is number => r !== null);
+    .filter((r): r is number => r !== null)
+    .sort((a, b) => a - b);
   const engagementRate = rates.length
+    ? (rates.length % 2
+        ? rates[(rates.length - 1) / 2]
+        : (rates[rates.length / 2 - 1] + rates[rates.length / 2]) / 2) * 100
+    : null;
+  const engagementMean = rates.length
     ? (rates.reduce((a, r) => a + r, 0) / rates.length) * 100
     : null;
 
@@ -91,12 +104,16 @@ export function computeKpis(data: { sources: Source[]; posts: Post[] }) {
   const months = posts.map((p) => monthOf(p.date)).filter(Boolean) as string[];
   const first = dated[0] ?? null;
   const last = dated[dated.length - 1] ?? null;
-  let postsPerMonth: number | null = null;
-  if (months.length) {
-    const sorted = [...months].sort();
-    const span = monthDiff(sorted[0], sorted[sorted.length - 1]) + 1;
-    postsPerMonth = months.length / span;
+  // Activity over the 12 months preceding the collection date.
+  let last12: number | null = null;
+  if (data.generatedAt) {
+    const end = data.generatedAt.slice(0, 7);
+    last12 = months.filter((m) => {
+      const d = monthDiff(m, end);
+      return d >= 0 && d < 12;
+    }).length;
   }
+  const postsPerMonth = last12 === null ? null : last12 / 12;
 
   const sentiment = posts.reduce(
     (a, p) => {
@@ -123,16 +140,15 @@ export function computeKpis(data: { sources: Source[]; posts: Post[] }) {
       ) / ratedCount
     : null;
 
-  // Volume published: what each platform declares, or what we collected if more.
-  const published = sources.reduce(
-    (a, s) =>
-      a +
-      Math.max(
-        s.totalPosts ?? 0,
-        posts.filter((p) => p.sourceId === s.id).length,
-      ),
-    0,
-  ) + posts.filter((p) => !sources.some((s) => s.id === p.sourceId)).length;
+  // Volume published = every collected post, plus the posts a platform declares
+  // that could not be collected (e.g. Instagram shows 179 but lists 12 logged-out).
+  // Partitioned by source, so entity totals always add up to the group total.
+  const published =
+    posts.length +
+    sources.reduce(
+      (a, s) => a + Math.max(0, (s.totalPosts ?? 0) - s.collected),
+      0,
+    );
   // Directory listings carry the company's founding year, not an online presence.
   const since = sources
     .filter((s) => s.platform !== "maligah")
@@ -156,9 +172,11 @@ export function computeKpis(data: { sources: Source[]; posts: Post[] }) {
     avgInteractions: measured.length ? total / measured.length : null,
     followers,
     engagementRate,
+    engagementMean,
     first,
     last,
     postsPerMonth,
+    last12,
     sentiment,
     satisfaction: sentimentTotal
       ? (sentiment.positive / sentimentTotal) * 100
@@ -166,6 +184,7 @@ export function computeKpis(data: { sources: Source[]; posts: Post[] }) {
     sentimentTotal,
     recommendation,
     reviewCount,
+    ratedCount,
     published,
     since,
     ctaRate,
@@ -207,7 +226,11 @@ export function postsByYear(posts: Post[]) {
   return [...years.entries()].sort(([a], [b]) => a.localeCompare(b));
 }
 
-export function perPlatform(data: { sources: Source[]; posts: Post[] }) {
+export function perPlatform(data: {
+  sources: Source[];
+  posts: Post[];
+  generatedAt?: string;
+}) {
   const platforms = [
     ...new Set([
       ...data.sources.map((s) => s.platform),
@@ -218,7 +241,10 @@ export function perPlatform(data: { sources: Source[]; posts: Post[] }) {
     .map((pl) => {
       const posts = data.posts.filter((p) => p.platform === pl);
       const sources = data.sources.filter((s) => s.platform === pl);
-      return { platform: pl, ...computeKpis({ sources, posts }) };
+      return {
+        platform: pl,
+        ...computeKpis({ sources, posts, generatedAt: data.generatedAt }),
+      };
     })
     .sort((a, b) => b.posts - a.posts);
 }

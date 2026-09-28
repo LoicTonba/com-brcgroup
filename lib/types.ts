@@ -21,7 +21,10 @@ export interface Source {
   name: string;
   url: string;
   followers: number | null;
+  /** Posts the platform says the account has published (null if not shown) */
   totalPosts: number | null;
+  /** Posts collected from this account in the audit */
+  collected: number;
   createdAt: string | null;
   /** Share of reviewers who recommend the page (Facebook "recommande"), in % */
   recommendation: { rate: number | null; count: number } | null;

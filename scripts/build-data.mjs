@@ -18,19 +18,27 @@ const num = (v) => (typeof v === "number" && Number.isFinite(v) ? v : null);
 const entityOf = (e, fallback) => (ENTITIES.has(e) ? e : fallback);
 
 const THEMES = [
+  ["humour", /humour|humoristique|m[èe]me|minion/i],
+  ["temoignage", /t[ée]moign|avis client|merci [àa]|d[ée]couverte d'un (autre )?client|client(e)? (faisant|qui)|sci cliente|qui est cette/i],
   ["recrutement", /recrut|offre d'emploi|stage|poste|candidat/i],
   ["formation", /formation|rentr[ée]e|inscri|fili[èe]re|campus|dipl[ôo]m|[ée]tudiant|bts|cours/i],
-  ["financement", /tontine|coop[ée]rative|cr[ée]dit|pr[êe]t|[ée]pargne|financ|gathe/i],
-  ["fiscalite", /imp[ôo]t|fisc|dsf|tva|patente|dgi|taxe/i],
+  ["financement", /tontine|coop[ée]rative|cr[ée]dit|pr[êe]t|[ée]pargne|financ|gathe|argent|[ée]conomis|investi|caisse|membres solidaires|projets personnels/i],
+  ["fiscalite", /imp[ôo]t|fisc|dsf|tva|patente|dgi|taxe|contribuable/i],
   ["comptabilite", /comptab|bilan|[ée]tats financiers|ohada/i],
-  ["juridique", /juridi|statut|sarl|cr[ée]ation d'entreprise|rccm|notaire/i],
+  ["juridique", /juridi|statut|sarl|cr[ée]ation d'entreprise|rccm|notaire|formalis|immatricul|soci[ée]t[ée]|\bsci\b/i],
   ["voeux", /bonne ann[ée]e|joyeux|f[êe]te|no[ëe]l|voeux|vœux|tabaski|ramadan/i],
   ["evenement", /s[ée]minaire|atelier|conf[ée]rence|c[ée]r[ée]monie|salon|webinaire|remise/i],
-  ["temoignage", /t[ée]moign|avis client|merci [àa]/i],
-  ["promotion", /promo|offre|r[ée]duction|gratuit/i],
+  ["promotion", /promo|offre|r[ée]duction|gratuit|adh[ée]rez|pourquoi se former|nous joindre|tableau de bord de suivi/i],
+  ["vie", /inside|coulisses|bureaux?|accueil|open space|collaborateur|[ée]quipe|soutenance|semaine de la jeunesse|apprenant|we are opened|dirigeante|mission du|transparence|ann[ée]e acad[ée]mique|formateurs/i],
+  ["motivation", /motivation|lundi|dimanche|r[ée]ussi|r[êe]v|d[ée]cideras|ann[ée]e de progr[èe]s|loin ne signifie|ta r[ée]ponse/i],
 ];
 // Fancy Unicode (𝗯𝗼𝗹𝗱, 𝙞𝙩𝙖𝙡𝙞𝙘) is common in posts; fold it to plain text.
 const plain = (text) => (text ?? "").normalize("NFKC").replace(/‌/g, "");
+// Collection placeholders were written in English; the dashboard is French.
+const frenchTitle = (t) =>
+  t
+    .replace(/^\(reel, text not visible logged-out\)$/i, "(Reel sans texte visible)")
+    .replace(/^\[paraphrase\]\s*/i, "(résumé) ");
 const themeOf = (text = "") =>
   THEMES.find(([, re]) => re.test(plain(text)))?.[0] ?? "autre";
 
@@ -104,7 +112,7 @@ for (const s of socialSources) {
       date: p.date ?? null,
       format: formatOf(p.format),
       theme: themeOf(p.text),
-      title: plain(p.text).slice(0, 140) || "(sans texte)",
+      title: frenchTitle(plain(p.text)).slice(0, 140) || "(sans texte)",
       reactions: num(p.reactions),
       comments: num(p.comments),
       shares: num(p.shares),
@@ -157,7 +165,7 @@ if (screens.length) {
     const base = {
       entity,
       format: s.format ?? "flyer",
-      theme: s.theme ?? themeOf(s.title),
+      theme: s.theme && s.theme !== "autre" ? s.theme : themeOf(s.title),
       title: s.title ?? s.file,
       hasCallToAction: s.hasCallToAction ?? null,
       quality: num(Number(s.quality)),
@@ -250,14 +258,50 @@ if (yt) {
   });
 }
 
-for (const p of posts) delete p.merged;
+// Keep only the reliable part of approximate dates ("2026-02 (approx, 7 months ago)").
+const cleanDate = (d) => /^\d{4}(-\d{2}(-\d{2})?)?/.exec(d ?? "")?.[0] ?? null;
+for (const p of posts) {
+  delete p.merged;
+  p.date = cleanDate(p.date);
+}
+for (const s of sources) s.collected = posts.filter((p) => p.sourceId === s.id).length;
 
 // ---- Qualitative findings written by hand during the audit
 const findings = read("constats.json") ?? [];
 
 const out = { generatedAt: COLLECTED_AT, sources, posts, findings };
+
+// ---- Video showcase: the most viewed YouTube videos of each entity. Only the
+// thumbnail ships with the page; the player loads when someone clicks.
+const videos = [];
+for (const entity of ENTITIES) {
+  (yt?.items ?? [])
+    .filter((v) => entityOf(v.entity, "GROUPE") === entity && v.views !== null)
+    .sort((a, b) => b.views - a.views)
+    .slice(0, 3)
+    .forEach((v) =>
+      videos.push({
+        id: v.id,
+        entity,
+        type: v.type,
+        title: plain(v.titlePlain ?? v.title),
+        date: v.date,
+        duration: v.duration,
+        views: v.views,
+        likes: num(v.likes),
+      }),
+    );
+}
+
+// ---- Benchmark of Cameroonian references (sourced research, Docs/audit)
+const benchmark = read("benchmark.json");
 mkdirSync(join(root, "data"), { recursive: true });
 writeFileSync(join(root, "data", "audit.json"), JSON.stringify(out, null, 1));
+writeFileSync(join(root, "data", "videos.json"), JSON.stringify(videos, null, 1));
+if (benchmark)
+  writeFileSync(join(root, "data", "benchmark.json"), JSON.stringify(benchmark, null, 1));
+if (!existsSync(join(root, "data", "media.json")))
+  writeFileSync(join(root, "data", "media.json"), "[]\n");
 console.log(`data/audit.json: ${sources.length} sources, ${posts.length} publications`);
 for (const s of sources)
   console.log(
