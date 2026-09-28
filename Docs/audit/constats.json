@@ -1,0 +1,58 @@
+[
+  {
+    "entity": "CGA",
+    "level": "warning",
+    "title": "Visuels republiés à l'identique",
+    "detail": "Plusieurs visuels ont été republiés, jusqu'à 3 fois : « Rappel Promo », « Adhérez au CGA », « Concevez vos DSF », « Audit ». Certaines légendes sont reprises mot pour mot, et deux visuels DSF ont été publiés deux fois le même jour (26 mars 2025).",
+    "action": "Tenir un calendrier éditorial partagé et renouveler le visuel à chaque relance d'une offre."
+  },
+  {
+    "entity": "CGA",
+    "level": "critical",
+    "title": "Identité de marque incohérente",
+    "detail": "Les visuels du CGA affichent des coordonnées qui varient : brconsulting-cm.com, cga-brcgroup.com, cfp-brcgroup.com, plusieurs numéros de téléphone, le hashtag #cfpbroadrangeconsulting sur la page du CGA, et un branding personnel sans logo CGA. Deux flyers indiquent aussi une date d'agrément erronée (2021 au lieu de 2020).",
+    "action": "Rédiger une charte graphique groupe (logos, couleurs, coordonnées officielles par entité) et faire relire chaque visuel avant publication."
+  },
+  {
+    "entity": "CGA",
+    "level": "warning",
+    "title": "Contenus sans valeur de marque et risque de droits d'auteur",
+    "detail": "Des mèmes et photos virales sans logo ont été publiés, dont un dessin portant le filigrane d'un journal (ledauphine.com). Les personnages récurrents (Aïcha, Owona, Kamdem) n'ont pas toujours le même visage d'un visuel à l'autre.",
+    "action": "Publier uniquement des visuels produits ou achetés par le groupe, et fixer une banque d'images pour les personnages."
+  },
+  {
+    "entity": "CGA",
+    "level": "warning",
+    "title": "Coquilles et légendes tronquées",
+    "detail": "Plusieurs coquilles figurent sur des visuels (« Attestion », « examplaires », « Rroad Range », « fical », hashtag « consultinf »). On trouve aussi une erreur d'année (« Noël 2026 »), une légende qui s'arrête en plein milieu et un message de vœux publié à contretemps.",
+    "action": "Relire chaque publication (checklist) et préparer les vœux dans un calendrier des fêtes."
+  },
+  {
+    "entity": "CGA",
+    "level": "good",
+    "title": "Ligne éditoriale structurée depuis août 2025",
+    "detail": "Rubriques régulières avec des personnages récurrents : Aïcha la comptable (lundi), Owona le juriste (mercredi), Kamdem le fiscaliste (vendredi). Les publications récentes sont beaucoup partagées (jusqu'à 49 partages).",
+    "action": "Étendre ce modèle au CFP et à Gathe Finance, et le décliner en vidéos courtes."
+  },
+  {
+    "entity": "GROUPE",
+    "level": "good",
+    "title": "Synergies entre entités déjà visibles",
+    "detail": "Des publications du CGA proposent une adhésion couplée CGA + coopérative Gathe Finance, et un témoignage WhatsApp montre qu'un statut du CFP a apporté un client au CGA.",
+    "action": "Structurer ces passerelles en offres groupe et les mettre en avant sur toutes les pages."
+  },
+  {
+    "entity": "CFP",
+    "level": "good",
+    "title": "Une vidéo a dépassé 75 000 vues",
+    "detail": "La vidéo Facebook « Formation professionnelle en fiscalité » totalise 75 200 vues et 745 réactions, soit bien plus que tout le reste des contenus du groupe. Elle a peut-être été sponsorisée, ce qui reste à confirmer.",
+    "action": "Identifier ce qui a fonctionné (sujet, format, budget) et produire une série vidéo sur ce modèle."
+  },
+  {
+    "entity": "GROUPE",
+    "level": "warning",
+    "title": "Présence éclatée, sans vitrine groupe",
+    "detail": "Le groupe compte 10 comptes répartis entre 3 marques. Il n'a pas de page groupe sur Facebook, Instagram ou LinkedIn, le compte X porte le nom du CGA, et la fiche Maligah n'est pas revendiquée et donne une adresse différente.",
+    "action": "Créer une page LinkedIn groupe, revendiquer les fiches annuaires (Maligah, Google Business) et harmoniser noms, logos et coordonnées."
+  }
+]
