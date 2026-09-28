@@ -381,13 +381,15 @@ export default function Dashboard({
         </Card>
       )}
 
-      <Card
-        className="mt-4"
-        title="Les visuels publiés"
-        subtitle="Une sélection de flyers réellement publiés sur Facebook et Instagram · cliquez pour agrandir"
-      >
-        <Gallery items={inView(media)} />
-      </Card>
+      {media.length > 0 && (
+        <Card
+          className="mt-4"
+          title="Les visuels publiés"
+          subtitle="Une sélection de flyers réellement publiés sur Facebook et Instagram · cliquez pour agrandir"
+        >
+          <Gallery items={inView(media)} />
+        </Card>
+      )}
 
       <Card
         className="mt-4"
