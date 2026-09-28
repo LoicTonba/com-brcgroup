@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Audit digital — Broad Range Consulting Group
 
-## Getting Started
+Tableau de bord (frontend uniquement, Next.js) des publications du groupe sur les réseaux sociaux :
+CGA (Centre de Gestion Agréé), CFP (Centre de Formation Professionnelle), Gathe Finance.
 
-First, run the development server:
+## Lancer en local
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Données
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Les collectes brutes sont dans `Docs/audit/` :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Fichier | Contenu |
+|---|---|
+| `facebook-screens-1.json`, `facebook-screens-2.json` | Catalogue des captures `Docs/publications-facebook-blog/` (page Facebook du CGA) |
+| `social.json` | Facebook (CGA, CFP, Gathe), Instagram, LinkedIn, X, Maligah |
+| `youtube.json` | Chaîne YouTube : vidéos, shorts, posts communauté |
+| `constats.json` | Constats qualitatifs rédigés pendant l'audit |
 
-## Learn More
+Après toute modification de ces fichiers, régénérer le fichier lu par l'application :
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm data   # écrit data/audit.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Les vidéos YouTube archivées (`Docs/publications-youtube/`) restent en local et sont exclues de git.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Déploiement
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Importer le dépôt sur Vercel, sans configuration particulière : la page est générée en statique.
