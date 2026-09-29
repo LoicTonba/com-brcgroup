@@ -54,49 +54,49 @@ const TIMELINE = [
     t: "0:00 – 1:30",
     part: "Ouverture",
     show: "Haut de page (bandeau violet)",
-    say: `« Madame, j'ai passé en revue l'ensemble de la présence du groupe sur Internet depuis la création des premiers comptes en ${k.since} : ${n(k.published)} publications sur ${k.platforms} plateformes et 10 comptes. Je vous présente ce qui marche, ce qui freine, et un plan concret sur 9 mois. »`,
+    say: `« Madame, j'ai passé en revue toute la présence du groupe sur Internet depuis la création des premiers comptes en ${k.since} : ${n(k.published)} publications, ${k.platforms} plateformes, 10 comptes. Je vous présente ce qui marche, ce qui freine, et un plan concret sur 9 mois. »`,
   },
   {
-    t: "1:30 – 3:30",
+    t: "1:30 – 3:00",
     part: "L'essentiel",
     show: "Encadré « L'essentiel » (3 colonnes)",
-    say: "Commencer par les points forts (vert), puis les priorités (rouge). Une phrase par point, pas de détail : le détail vient après. Message : « la base est bonne, le problème est l'organisation, pas la qualité ».",
+    say: "Commencer par les points forts (vert), puis les priorités (rouge). Une phrase par point. Message : « la base est bonne ; ce qui manque, c'est l'organisation, pas la qualité ».",
   },
   {
-    t: "3:30 – 6:00",
+    t: "3:00 – 5:00",
     part: "Chiffres clés",
     show: "Tuile 502 + les 6 tuiles",
-    say: `${n(k.followers)} abonnés cumulés, ${n(k.interactions)} interactions, ${n(k.views)} vues vidéo. Insister sur l'engagement médian de ${pct(k.engagementRate)} : il est au-dessus du repère Facebook (0,15 %), donc les gens aiment ce que nous publions. Le frein est le volume : au moins ${k.last12} publications en 12 mois pour 10 comptes.`,
+    say: `${n(k.followers)} abonnés cumulés, ${n(k.interactions)} interactions, ${n(k.views)} vues vidéo. Engagement médian de ${pct(k.engagementRate)}, au-dessus du repère Facebook (0,15 %) : les gens aiment ce que nous publions. Le frein est le volume : au moins ${k.last12} publications en 12 mois pour 10 comptes.`,
   },
   {
-    t: "6:00 – 8:00",
-    part: "Par entité, visuels et vidéos",
-    show: "Comparatif par entité → cliquer CGA, CFP, Gathe → galerie → vidéos",
-    say: "Montrer 2 ou 3 flyers par entité et lancer 10 secondes d'une vidéo. Citer la vidéo du CFP à 75 200 vues : la preuve que la vidéo peut toucher large.",
+    t: "5:00 – 7:00",
+    part: "Entités, visuels, vidéos",
+    show: "Comparatif → cliquer CGA, CFP, Gathe → galerie → vidéos",
+    say: "Laisser la PDG cliquer sur une entité. Montrer 2 ou 3 flyers et 10 secondes d'une vidéo. Citer la vidéo du CFP à 75 200 vues : la preuve que la vidéo touche large.",
   },
   {
-    t: "8:00 – 10:30",
+    t: "7:00 – 9:00",
     part: "Constats",
     show: "Section « Constats et axes d'amélioration »",
-    say: "Trois priorités seulement : identité incohérente, canaux à l'abandon, présence éclatée. Avoir les captures (pub-XX) prêtes sur le téléphone si elle demande une preuve. Ton factuel, jamais accusateur : « voici ce qu'un client voit ».",
+    say: "Trois priorités : identité incohérente, canaux à l'abandon, présence éclatée. Captures pub-XX prêtes sur le téléphone. Ton factuel : « voici ce qu'un client voit ».",
   },
   {
-    t: "10:30 – 13:30",
+    t: "9:00 – 11:30",
     part: "Les références au Cameroun",
     show: "Section « Les références au Cameroun »",
-    say: `Chiffres du marché (12,6 M d'internautes, 1,6 M de membres LinkedIn), puis l'écart LinkedIn, puis les 6 leçons d'Orange Cameroun. Dire : « Orange n'est pas notre concurrent, c'est notre modèle de méthode ». Finir par une référence de notre métier (Advans pour Gathe, IUC pour le CFP, Forvis Mazars pour le CGA).`,
+    say: "Le marché (12,6 M d'internautes, 1,6 M de membres LinkedIn), l'écart LinkedIn, puis les 6 leçons d'Orange Cameroun. « Orange n'est pas notre concurrent, c'est notre modèle de méthode. » Finir par une référence de notre métier.",
   },
   {
-    t: "13:30 – 17:00",
-    part: "Stratégie sur 9 mois",
-    show: "Section « Stratégie proposée sur 9 mois »",
-    say: "Les 3 phases (Fondations, Accélération, Conversion), le planning, puis les 6 objectifs chiffrés : point de départ mesuré, cible au mois 9. Insister : chaque mois, ce tableau de bord est mis à jour et présenté en 30 minutes.",
+    t: "11:30 – 17:00",
+    part: "La stratégie sur 9 mois",
+    show: "Section « Stratégie proposée sur 9 mois », de haut en bas",
+    say: "Dans l'ordre : l'ambition ; les 3 phases ; ce que nous publierons pour chaque entité ; le planning ; « ce que vous verrez » à M1, M3, M6 et M9 ; les 6 objectifs chiffrés ; ce que le groupe met à disposition et les risques anticipés. Phrase clé : « chaque mois, vous voyez les chiffres ici même, en 30 minutes ».",
   },
   {
-    t: "17:00 – 18:00",
-    part: "Conclusion et demande",
-    show: "Retour en haut de page",
-    say: "« Je vous propose de piloter ce plan comme community manager du groupe, avec un point mensuel avec vous. Si vous êtes d'accord, le mois 1 peut démarrer dès la semaine prochaine avec la charte et le calendrier éditorial. »",
+    t: "17:00 – 20:00",
+    part: "Proposition et conclusion",
+    show: "Retour en haut de page, puis remise de la proposition commerciale imprimée",
+    say: "« Pour mettre ce plan en œuvre, je vous propose de le piloter comme community manager du groupe. Voici ma proposition. » Remettre la feuille, la laisser lire, se taire. Puis : « Si vous êtes d'accord, le mois 1 démarre dès la semaine prochaine. » Suivre la fiche de négociation (document personnel).",
   },
 ];
 
@@ -137,11 +137,15 @@ const FAQ = [
   ],
   [
     "« Combien cela va coûter ? »",
-    "Les phases 1 et 2 sont surtout de l'organisation et de la production interne. La publicité payante ne démarre qu'au mois 5, sur 2 offres, avec un budget test que nous fixerons ensemble et mesurerons en coût par contact avant d'aller plus loin.",
+    "Répondre avec la proposition commerciale : un forfait mensuel qui couvre tout le plan (publications, vidéos, modération, rapport mensuel). Le budget publicitaire est à part, il ne démarre qu'au mois 5, sur 2 offres, avec un montant test fixé ensemble et mesuré en coût par contact. Pour la négociation, suivre la fiche personnelle.",
   ],
   [
     "« Quels résultats pouvez-vous garantir ? »",
     "Les moyens sont garantis : le rythme de publication, la charte, la réponse sous 24 h. Les résultats sont mesurés chaque mois dans ce tableau de bord, avec des objectifs ajustés au mois 3 et au mois 6 si nécessaire.",
+  ],
+  [
+    "« Et si ça ne marche pas ? »",
+    "Le plan a des jalons datés : à la fin du mois 3, vous voyez sur le tableau de bord si le rythme, les vidéos et les délais de réponse sont tenus. C'est le moment naturel pour décider de continuer.",
   ],
   [
     "« Pourquoi ne pas tout faire tout de suite ? »",
@@ -153,7 +157,7 @@ const FAQ = [
   ],
   [
     "« Et les commentaires, la satisfaction ? »",
-    `100 % de recommandation sur ${k.ratedCount} avis Facebook notés, mais très peu de commentaires écrits (${k.comments} au total). C'est un axe du plan : faire parler la communauté et publier des témoignages.`,
+    `100 % de recommandation sur ${k.ratedCount} avis Facebook notés. En revanche, ${k.comments} commentaires pour ${k.measured} publications mesurées, soit moins de 2 par publication, et trop peu de commentaires publics lisibles pour mesurer une tonalité : on ne l'affirme donc pas. C'est un axe du plan : faire parler la communauté et publier des témoignages.`,
   ],
 ];
 
@@ -218,7 +222,7 @@ const html = `<!doctype html>
       <div class="box">
         <div class="meta"><b>Présentation à :</b> Mme Paule Diane HIMSTA, Direction Générale</div>
         <div class="meta"><b>Présenté par :</b> ${PRESENTER}</div>
-        <div class="meta"><b>Durée :</b> 18 minutes + questions</div>
+        <div class="meta"><b>Durée :</b> 20 minutes + questions</div>
         <div class="meta"><b>Support :</b> ${SITE}</div>
       </div>
     </div>
@@ -235,15 +239,15 @@ const html = `<!doctype html>
   <ol>
     <li><b>La qualité est là</b> : engagement médian de ${pct(k.engagementRate)} par publication, au-dessus du repère Facebook (0,15 %), et 100 % de recommandation sur ${k.ratedCount} avis Facebook notés.</li>
     <li><b>L'organisation manque</b> : 10 comptes, 3 identités différentes, des canaux à l'abandon, au moins ${k.last12} publications seulement en 12 mois.</li>
-    <li><b>Le plan est concret et mesurable</b> : 3 phases, 8 chantiers, 6 objectifs chiffrés, suivis chaque mois dans le tableau de bord.</li>
+    <li><b>Le plan est concret et mesurable</b> : 3 phases, des contenus définis pour chaque entité, des jalons à M1, M3, M6 et M9, 6 objectifs chiffrés suivis chaque mois dans le tableau de bord.</li>
   </ol>
 
-  <h3>Déroulé minuté (18 minutes)</h3>
+  <h3>Déroulé minuté (20 minutes)</h3>
   <table>
     <tr><th style="width:17mm">Temps</th><th style="width:34mm">Partie</th><th style="width:42mm">À l'écran</th><th>Ce que vous dites</th></tr>
     ${TIMELINE.map((r) => `<tr><td class="num">${r.t}</td><td><b>${r.part}</b></td><td class="small">${r.show}</td><td class="small say">${esc(r.say)}</td></tr>`).join("")}
   </table>
-  <p class="small muted">Conseil : laissez la PDG cliquer elle-même sur une entité du comparatif ; elle s'approprie les chiffres. Gardez le rythme : 2 à 3 minutes par partie, pas plus.</p>
+  <p class="small muted">Conseil : laissez la PDG cliquer elle-même sur une entité du comparatif ; elle s'approprie les chiffres. La stratégie est le cœur : gardez-lui ses 5 minutes 30, quitte à écourter les chiffres.</p>
 </section>
 
 <section class="page">
@@ -329,6 +333,15 @@ const html = `<!doctype html>
       .join("")}
   </div>
 
+  <h3>Ce que nous publierons, entité par entité</h3>
+  <div class="grid2">
+    ${strategy.pillars
+      .map(
+        (p) => `<div class="card" style="margin:0;border-left:1.2mm solid ${COLORS[p.entity]}"><b>${ENTITIES.find((e) => e.id === p.entity)?.label}</b><ul class="small" style="margin-top:1mm">${p.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`,
+      )
+      .join("")}
+  </div>
+
   <div style="break-inside: avoid">
   <h3>Mois par mois</h3>
   <table>
@@ -351,10 +364,22 @@ const html = `<!doctype html>
   </table>
   <p class="small">${strategy.unmeasured.map(esc).join(". ")}.</p>
 
+  <h3>Ce que la PDG verra, étape par étape</h3>
+  <table>
+    ${strategy.milestones.map((m) => `<tr><td style="width:26mm"><b>Fin du mois ${m.month}</b></td><td class="small">${m.items.map(esc).join(" · ")}</td></tr>`).join("")}
+  </table>
+
   <h3>Semaine type (rythme éditorial proposé)</h3>
   <table>
     ${WEEK.map(([d, c]) => `<tr><td style="width:24mm"><b>${d}</b></td><td class="small">${c}</td></tr>`).join("")}
   </table>
+
+  <div class="grid2">
+    <div><h3>Ce que le groupe met à disposition</h3>
+      <ul class="small">${strategy.requirements.map((r) => `<li>${esc(r)}</li>`).join("")}</ul></div>
+    <div><h3>Risques anticipés</h3>
+      <ul class="small">${strategy.risks.map((r) => `<li><b>${esc(r.risk)}</b> : ${esc(r.answer)}</li>`).join("")}</ul></div>
+  </div>
 
   <h3>Pilotage</h3>
   <ul class="small">${strategy.governance.map((g) => `<li>${esc(g)}</li>`).join("")}</ul>
@@ -375,7 +400,8 @@ const html = `<!doctype html>
         <li>Revérifier les compteurs d'abonnés d'Orange et des références (ils changent chaque jour).</li>
         <li>Vérifier la date de la dernière publication Facebook du CGA (${formatDate(byEntity[0].k.last)} dans l'audit).</li>
         <li>Mettre sur le téléphone les captures citées en preuve (pub-8, 30, 35, 47, 50, 62, 71, 76, 83, 90, 95, 99 à 102, 107).</li>
-        <li>Répéter une fois à voix haute avec un chronomètre : 18 minutes.</li>
+        <li>Répéter une fois à voix haute avec un chronomètre : 20 minutes.</li>
+        <li>Imprimer la proposition commerciale en 2 exemplaires (dossier <i>Docs/prive</i>).</li>
         <li>Imprimer ce guide (ou l'avoir sur une tablette).</li>
       </ul>
     </div>

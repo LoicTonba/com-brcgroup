@@ -111,6 +111,107 @@
     "Délai de réponse aux messages : non mesuré aujourd'hui, objectif < 24 h",
     "Demandes clients venues des réseaux (WhatsApp, Messenger) : suivi mis en place dès le mois 1, objectif fixé au mois 3 sur la base mesurée"
   ],
+  "pillars": [
+    {
+      "entity": "CGA",
+      "items": [
+        "Expertise : les rubriques d'Aïcha (comptabilité), Owona (juridique) et Kamdem (fiscalité)",
+        "Calendrier fiscal : DSF, échéances, loi de finances expliquée",
+        "Preuve sociale : entreprises accompagnées qui témoignent",
+        "Offres : adhésion au CGA, formalisation d'entreprise"
+      ]
+    },
+    {
+      "entity": "CFP",
+      "items": [
+        "Une filière mise en avant chaque semaine, avec ses débouchés",
+        "Vie du campus : cours pratiques, soutenances, coulisses",
+        "Réussites : diplômés en emploi, stages, « Ready for the Job World »",
+        "Inscriptions et rentrées, avec contact WhatsApp direct"
+      ]
+    },
+    {
+      "entity": "GATHE",
+      "items": [
+        "Éducation financière : épargne, tontine, erreurs à éviter",
+        "Témoignages de membres et projets financés",
+        "Produits : caisse scolaire, épargne, crédit",
+        "Confiance : statut de coopérative, transparence, résultats"
+      ]
+    },
+    {
+      "entity": "GROUPE",
+      "items": [
+        "Valeurs, équipe et parole de la dirigeante",
+        "Offres croisées CGA + CFP + Gathe Finance",
+        "Événements et lives",
+        "Actualité du groupe"
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "month": 1,
+      "items": [
+        "Charte graphique livrée et appliquée",
+        "10 comptes harmonisés : nom, bio, coordonnées",
+        "Page LinkedIn groupe en ligne",
+        "Calendrier du mois 2 validé"
+      ]
+    },
+    {
+      "month": 3,
+      "items": [
+        "30 publications par mois",
+        "12 vidéos courtes par mois",
+        "Délai de réponse aux messages mesuré",
+        "Objectif de demandes clients fixé"
+      ]
+    },
+    {
+      "month": 6,
+      "items": [
+        "35 publications par mois",
+        "Au moins 12 000 abonnés cumulés",
+        "Série témoignages et premier live du CGA réalisés",
+        "Campagnes test mesurées en coût par contact"
+      ]
+    },
+    {
+      "month": 9,
+      "items": [
+        "40 publications par mois, dont 40 % de vidéo",
+        "15 000 abonnés cumulés, 1 500 sur LinkedIn",
+        "50 avis clients publiés",
+        "Bilan et budget de l'année 2"
+      ]
+    }
+  ],
+  "requirements": [
+    "Accès administrateur aux 10 comptes (et récupération des accès perdus)",
+    "Un référent par entité qui valide les contenus sous 48 h",
+    "30 minutes par mois de chaque expert pour les vidéos",
+    "Logos et fichiers sources des chartes existantes",
+    "À partir du mois 5 : un budget publicitaire séparé, fixé ensemble"
+  ],
+  "risks": [
+    {
+      "risk": "Validation lente des contenus",
+      "answer": "Calendrier validé une fois par mois ; sans retour sous 48 h, la version prévue est publiée."
+    },
+    {
+      "risk": "Peu de témoignages disponibles",
+      "answer": "Message de satisfaction envoyé après chaque dossier ou fin de formation, avec demande d'avis."
+    },
+    {
+      "risk": "Accès perdus aux anciens comptes (X, YouTube)",
+      "answer": "Récupération au mois 1, ou fermeture propre et redirection vers les comptes actifs."
+    },
+    {
+      "risk": "Budget publicitaire limité",
+      "answer": "Tests sur 2 offres seulement ; on arrête ce qui n'apporte pas de contacts."
+    }
+  ],
   "orangeLessons": [
     {
       "orange": "Une signature courte, répétée partout : « Orange est là », lancée en mars 2025 pour les 25 ans de la marque.",

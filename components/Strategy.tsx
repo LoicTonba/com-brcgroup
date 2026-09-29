@@ -1,4 +1,4 @@
-import { formatNumber } from "@/lib/metrics";
+import { ENTITIES, formatNumber } from "@/lib/metrics";
 import { ENTITY_COLOR } from "./charts";
 import type { Entity } from "@/lib/types";
 
@@ -50,6 +50,10 @@ export interface StrategyData {
     note: string;
   }[];
   unmeasured: string[];
+  pillars: { entity: Entity; items: string[] }[];
+  milestones: { month: number; items: string[] }[];
+  requirements: string[];
+  risks: { risk: string; answer: string }[];
   orangeLessons: { orange: string; brc: string }[];
   governance: string[];
 }
@@ -265,6 +269,28 @@ export function StrategySection({ data }: { data: StrategyData }) {
       </ol>
 
       <div>
+        <h3 className="text-sm font-semibold">Ce que nous publierons, entité par entité</h3>
+        <ul className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {data.pillars.map((p) => (
+            <li
+              key={p.entity}
+              className="rounded-xl border border-l-4 p-4"
+              style={{ borderColor: "var(--border)", borderLeftColor: ENTITY_COLOR[p.entity] }}
+            >
+              <p className="text-sm font-semibold">
+                {ENTITIES.find((e) => e.id === p.entity)?.label}
+              </p>
+              <ul className="mt-2 space-y-1.5 text-sm text-ink-2">
+                {p.items.map((i) => (
+                  <li key={i}>{i}</li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
         <h3 className="text-sm font-semibold">Planning des chantiers</h3>
         <div className="mt-3 overflow-x-auto">
           <div className="min-w-[640px]">
@@ -310,6 +336,29 @@ export function StrategySection({ data }: { data: StrategyData }) {
       </div>
 
       <div>
+        <h3 className="text-sm font-semibold">Ce que vous verrez, étape par étape</h3>
+        <ol className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {data.milestones.map((m) => (
+            <li key={m.month} className="relative rounded-xl bg-page p-4">
+              <p className="text-xs font-semibold tracking-wide text-brand uppercase">
+                Fin du mois {m.month}
+              </p>
+              <ul className="mt-2 space-y-1.5 text-sm">
+                {m.items.map((i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-brand" aria-hidden>
+                      ●
+                    </span>
+                    {i}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div>
         <h3 className="text-sm font-semibold">Objectifs à 9 mois</h3>
         <p className="text-sm text-ink-2">
           Point de départ mesuré par cet audit, et cible proposée à la fin du mois 9.
@@ -348,6 +397,28 @@ export function StrategySection({ data }: { data: StrategyData }) {
             );
           })}
         </ul>
+      </div>
+
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+        <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)" }}>
+          <p className="text-sm font-semibold">Ce que le groupe met à disposition</p>
+          <ul className="mt-2 space-y-1.5 text-sm text-ink-2">
+            {data.requirements.map((r) => (
+              <li key={r}>{r}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)" }}>
+          <p className="text-sm font-semibold">Risques anticipés</p>
+          <ul className="mt-2 space-y-2 text-sm">
+            {data.risks.map((r) => (
+              <li key={r.risk}>
+                <span className="font-medium">{r.risk}</span>
+                <span className="block text-ink-2">→ {r.answer}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2">

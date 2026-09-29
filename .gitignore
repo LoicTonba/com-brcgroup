@@ -43,3 +43,6 @@ next-env.d.ts
 # Sources brutes de l'audit (lourdes, non nécessaires au site) : restent en local
 /Docs/publications-youtube/
 /Docs/publications-facebook-blog/
+
+# Documents commerciaux personnels (tarifs, négociation) : jamais dans git
+/Docs/prive/
