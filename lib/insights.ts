@@ -20,6 +20,9 @@ export interface Insight {
   action: string;
 }
 
+/** Average Facebook engagement per post, Socialinsider benchmarks (Jan 2026). */
+const FACEBOOK_BENCHMARK = 0.15;
+
 const VIDEO_FORMATS = new Set(["video", "reel", "short"]);
 
 /** Rule-based findings derived from whatever slice of the audit is shown. */
@@ -31,72 +34,70 @@ export function buildInsights(
   if (!data.posts.length) return out;
 
 
-  if (k.postsPerMonth !== null) {
-    const ppm = k.postsPerMonth;
+  if (k.last12 !== null) {
+    const ppm = k.last12 / 12;
     out.push(
-      ppm < 4
+      ppm < 12
         ? {
-            level: ppm < 2 ? "critical" : "warning",
-            title: "Rythme de publication irrégulier",
-            detail: `${formatNumber(ppm, 1)} publication(s) par mois en moyenne depuis ${k.first?.slice(0, 4)}. Les algorithmes pénalisent les pages peu actives.`,
+            level: ppm < 4 ? "critical" : "warning",
+            title: "Rythme de publication insuffisant",
+            detail: `Au moins ${k.last12} publications sur les 12 derniers mois, soit environ ${formatNumber(ppm, 1)} par mois pour ${data.sources.filter((s) => s.collected > 0).length} comptes réunis. Les algorithmes favorisent les pages qui publient plusieurs fois par semaine.`,
             action:
-              "Mettre en place un calendrier éditorial : 3 à 4 publications par semaine et par entité.",
+              "Calendrier éditorial : 3 à 4 publications par semaine et par entité, planifiées à l'avance.",
           }
         : {
             level: "good",
             title: "Rythme de publication soutenu",
-            detail: `${formatNumber(ppm, 1)} publications par mois en moyenne.`,
+            detail: `${k.last12} publications recensées sur les 12 derniers mois (environ ${formatNumber(ppm, 1)} par mois).`,
             action: "Maintenir le rythme et le planifier à l'avance.",
           },
     );
   }
 
-  if (k.last) {
-    const days = Math.round(
-      (Date.parse(data.generatedAt) - Date.parse(k.last.padEnd(10, "-01").slice(0, 10))) /
-        86_400_000,
-    );
-    if (days > 30)
-      out.push({
-        level: days > 90 ? "critical" : "warning",
-        title: "Présence en sommeil",
-        detail: `Dernière publication recensée il y a environ ${days} jours.`,
-        action: "Relancer la page avec une série de contenus programmés.",
-      });
-  }
-
-  const months = [
-    ...new Set(data.posts.map((p) => monthOf(p.date)).filter(Boolean) as string[]),
-  ].sort();
-  let gap = { months: 0, from: "", to: "" };
-  for (let i = 1; i < months.length; i++) {
-    const d = monthDiff(months[i - 1], months[i]) - 1;
-    if (d > gap.months) gap = { months: d, from: months[i - 1], to: months[i] };
+  // Longest silence inside a single account whose history was collected in
+  // full: on a partial collection a gap may just be posts we could not see.
+  let gap = { months: 0, from: "", to: "", source: "" };
+  for (const src of data.sources.filter((s) => s.status === "ok")) {
+    const months = [
+      ...new Set(
+        data.posts
+          .filter((p) => p.sourceId === src.id)
+          .map((p) => monthOf(p.date))
+          .filter(Boolean) as string[],
+      ),
+    ].sort();
+    for (let i = 1; i < months.length; i++) {
+      const d = monthDiff(months[i - 1], months[i]) - 1;
+      if (d > gap.months)
+        gap = { months: d, from: months[i - 1], to: months[i], source: src.name };
+    }
   }
   if (gap.months >= 6)
     out.push({
       level: "critical",
       title: "Longue période sans publication",
-      detail: `Aucune publication recensée pendant ${gap.months} mois, entre ${formatDate(gap.from)} et ${formatDate(gap.to)}. L'audience construite au départ s'est en grande partie perdue.`,
+      detail: `${gap.source} : aucune publication retrouvée pendant ${gap.months} mois, entre ${formatDate(gap.from)} et ${formatDate(gap.to)}. Une page silencieuse perd sa portée auprès de ses propres abonnés.`,
       action:
-        "Ne plus jamais laisser une page sans animation : un planning minimal et un suppléant désigné pendant les absences.",
+        "Ne plus laisser une page sans animation : planning minimal garanti et suppléant désigné pendant les absences.",
     });
 
   if (k.engagementRate !== null) {
+    const rate = formatNumber(k.engagementRate, 2);
     out.push(
-      k.engagementRate < 1
+      k.engagementRate >= FACEBOOK_BENCHMARK
         ? {
-            level: "warning",
-            title: "Engagement faible",
-            detail: `Taux d'engagement moyen de ${formatNumber(k.engagementRate, 2)} % par publication (repère sectoriel : 1 à 3 %).`,
+            level: "good",
+            title: "Une audience qui réagit",
+            detail: `Taux d'engagement médian de ${rate} % par publication, au niveau ou au-dessus du repère international Facebook (${formatNumber(FACEBOOK_BENCHMARK, 2)} %, Socialinsider 2026). Le frein n'est pas l'intérêt des abonnés mais leur nombre et la régularité des publications.`,
             action:
-              "Poser des questions, publier des témoignages clients, des coulisses et des vidéos courtes.",
+              "Faire grandir l'audience (vidéo courte, sponsorisation ciblée, partages croisés entre entités) en gardant la qualité actuelle.",
           }
         : {
-            level: "good",
-            title: "Engagement correct",
-            detail: `Taux d'engagement moyen de ${formatNumber(k.engagementRate, 2)} % par publication.`,
-            action: "Identifier les formats gagnants (top publications) et les répliquer.",
+            level: "warning",
+            title: "Engagement sous les repères",
+            detail: `Taux d'engagement médian de ${rate} % par publication, sous le repère international Facebook (${formatNumber(FACEBOOK_BENCHMARK, 2)} %, Socialinsider 2026).`,
+            action:
+              "Poser des questions, publier des témoignages clients, des coulisses et des vidéos courtes.",
           },
     );
   }

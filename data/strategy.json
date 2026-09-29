@@ -1,0 +1,145 @@
+{
+  "title": "Plan de community management groupe — 9 mois",
+  "ambition": "Passer d'une présence dispersée à une marque groupe cohérente, active chaque semaine sur chaque entité, qui génère des demandes clients mesurables.",
+  "phases": [
+    {
+      "id": "P1",
+      "name": "Fondations",
+      "months": [1, 3],
+      "goal": "Remettre de l'ordre et poser les bases de mesure.",
+      "deliverables": [
+        "Charte graphique groupe : logos, couleurs, coordonnées officielles par entité",
+        "Harmonisation des noms, bios et contacts sur les 10 comptes ; revendication des fiches annuaires (Maligah, Google Business Profile)",
+        "Création de la page LinkedIn Broad Range Consulting Group",
+        "Calendrier éditorial mensuel validé par la Direction (3 publications par semaine et par entité)",
+        "WhatsApp Business : catalogue des offres, réponses rapides et message d'accueil",
+        "Démarrage de la vidéo courte : 1 Reel / Short par semaine et par entité",
+        "Tableau de bord mensuel (ce site) avec les chiffres de référence"
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "Accélération",
+      "months": [4, 6],
+      "goal": "Faire grandir l'audience et installer la preuve sociale.",
+      "deliverables": [
+        "Série témoignages : clients du CGA, apprenants du CFP, membres de Gathe Finance",
+        "Programme ambassadeurs : collaborateurs et apprenants relaient les publications",
+        "Live / webinaire « Loi de finances » par le CGA (modèle des sessions organisées à Douala en 2026)",
+        "Premières campagnes sponsorisées ciblées (Douala, Yaoundé) sur 2 offres prioritaires, avec contact direct WhatsApp",
+        "Relance de la chaîne YouTube : 2 vidéos pédagogiques par mois",
+        "Charte de modération et réponse aux messages sous 24 h"
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "Conversion",
+      "months": [7, 9],
+      "goal": "Transformer l'audience en clients et prouver le retour sur investissement.",
+      "deliverables": [
+        "Jeu-concours ou quiz interactif sur la page groupe (mécanique inspirée des campagnes Orange / Afriland)",
+        "Offres croisées CGA + Gathe Finance + CFP mises en avant sur tous les comptes",
+        "Campagne rentrée CFP et campagne adhésion CGA avec suivi des demandes entrantes",
+        "Bilan à 9 mois : audience, engagement, demandes clients, coût par contact",
+        "Recommandations et budget pour l'année 2"
+      ]
+    }
+  ],
+  "workstreams": [
+    { "name": "Identité & fondations", "months": [1, 2] },
+    { "name": "Calendrier éditorial", "months": [1, 9] },
+    { "name": "Vidéo courte (Reels, Shorts)", "months": [2, 9] },
+    { "name": "Communauté & service client", "months": [2, 9] },
+    { "name": "Témoignages & ambassadeurs", "months": [4, 9] },
+    { "name": "Publicité ciblée", "months": [5, 9] },
+    { "name": "Événements digitaux (lives, jeux)", "months": [4, 8] },
+    { "name": "Mesure & reporting mensuel", "months": [1, 9] }
+  ],
+  "targets": [
+    {
+      "kpi": "Publications par mois (tous comptes)",
+      "current": 7.8,
+      "currentLabel": "≈ 7,8",
+      "target": 40,
+      "targetLabel": "40",
+      "note": "Aujourd'hui : au moins 94 publications sur 12 mois. Objectif : 3 publications par semaine et par entité, plus la page groupe."
+    },
+    {
+      "kpi": "Abonnés cumulés",
+      "current": 9904,
+      "currentLabel": "9 904",
+      "target": 15000,
+      "targetLabel": "15 000",
+      "note": "+50 % en 9 mois, par la vidéo courte, les partages croisés et une sponsorisation ciblée."
+    },
+    {
+      "kpi": "Abonnés LinkedIn (toutes pages)",
+      "current": 270,
+      "currentLabel": "270",
+      "target": 1500,
+      "targetLabel": "1 500",
+      "note": "Canal clé pour la clientèle entreprises du CGA ; création de la page groupe et relais des collaborateurs."
+    },
+    {
+      "kpi": "Part de vidéo dans les publications",
+      "current": 22,
+      "currentLabel": "22 %",
+      "target": 40,
+      "targetLabel": "40 %",
+      "unit": "%",
+      "note": "Calculée sur les 12 derniers mois."
+    },
+    {
+      "kpi": "Avis clients publiés",
+      "current": 14,
+      "currentLabel": "14",
+      "target": 50,
+      "targetLabel": "50",
+      "note": "14 avis Facebook aujourd'hui, dont 13 notés à 100 % de recommandation. Ensuite, Google Business Profile."
+    },
+    {
+      "kpi": "Taux d'engagement médian",
+      "current": 0.23,
+      "currentLabel": "0,23 %",
+      "target": 0.3,
+      "targetLabel": "≥ 0,30 %",
+      "unit": "%",
+      "note": "Garder la qualité d'engagement pendant que l'audience grandit (repère Facebook : 0,15 %)."
+    }
+  ],
+  "unmeasured": [
+    "Délai de réponse aux messages : non mesuré aujourd'hui, objectif < 24 h",
+    "Demandes clients venues des réseaux (WhatsApp, Messenger) : suivi mis en place dès le mois 1, objectif fixé au mois 3 sur la base mesurée"
+  ],
+  "orangeLessons": [
+    {
+      "orange": "Une signature courte, répétée partout : « Orange est là », lancée en mars 2025 pour les 25 ans de la marque.",
+      "brc": "Une signature et un hashtag communs aux trois entités, présents sur chaque visuel."
+    },
+    {
+      "orange": "Des jeux liés à l'usage quotidien : « Ta Wish List » (nov. 2025 – févr. 2026), participation par Orange Money ou l'app Max it.",
+      "brc": "Un quiz fiscal ou un jeu-concours lié à une adhésion au CGA ou à une épargne chez Gathe Finance."
+    },
+    {
+      "orange": "Le public crée le contenu et vote : Orange Music Talents 2026, vidéos postées avec #OrangeMusicTalents237.",
+      "brc": "Un défi vidéo des apprenants du CFP (« ma formation en 30 secondes »), relayé par l'école."
+    },
+    {
+      "orange": "La vidéo courte d'abord : la majorité des publications Instagram récentes sont des Reels.",
+      "brc": "Passer de 22 % à 40 % de vidéo dans nos publications en 9 mois."
+    },
+    {
+      "orange": "Le service client dans les messageries : l'assistant « Combi » répond sur Messenger et WhatsApp depuis 2021.",
+      "brc": "WhatsApp Business avec réponses rapides et un engagement de réponse sous 24 h."
+    },
+    {
+      "orange": "La formation des jeunes comme preuve d'engagement : l'Orange Digital Center a formé 2 544 apprenants (bilan de février 2023).",
+      "brc": "Mettre en avant le CFP comme acteur de l'emploi des jeunes : diplômés, stages, témoignages."
+    }
+  ],
+  "governance": [
+    "Un point mensuel de 30 min avec la Direction : chiffres du mois, contenus du mois suivant",
+    "Validation des publications sensibles (tarifs, fiscalité) par le responsable de chaque entité",
+    "Tous les chiffres suivis dans ce tableau de bord, mis à jour chaque mois"
+  ]
+}
